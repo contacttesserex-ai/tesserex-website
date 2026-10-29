@@ -15,7 +15,7 @@
     <!-- Google Apps Script web app that receives the contact form (saves to a Google Sheet and emails contactEmail). Redeploy the script as a new version after editing it. -->
     <contactScriptUrl>https://script.google.com/macros/s/AKfycbzTJ87BCSOadKLbUPLDSRn5iXmyGDTd8YMipEL1aivtDM8twQn7ih-afktOW7FhVjjKgQ/exec</contactScriptUrl>
     <!-- dark, light or fire -->
-    <defaultTheme>dark</defaultTheme>
+    <defaultTheme>fire</defaultTheme>
   </config>
 
   <!-- Short labels and messages used by scripts -->
