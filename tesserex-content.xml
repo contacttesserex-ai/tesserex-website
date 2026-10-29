@@ -6,10 +6,8 @@
     <contactEmail>contact.tesserex@gmail.com</contactEmail>
     <!-- Contact form subject is: subjectPrefix + " - " + the subject the visitor types -->
     <subjectPrefix>Get In Touch section - TessereX Website</subjectPrefix>
-    <!-- Where the contact form posts the message so it is emailed directly to contactEmail. {email} is replaced by contactEmail. Uses the free FormSubmit service: the owner of the address must confirm it once by clicking the activation email sent after the first message. -->
-    <formEndpoint>https://formsubmit.co/ajax/{email}</formEndpoint>
-    <!-- Fallback used if the request above is blocked: the classic FormSubmit HTML-form POST (same service, same email) -->
-    <formPostEndpoint>https://formsubmit.co/{email}</formPostEndpoint>
+    <!-- Google Apps Script web app that receives the contact form (saves to a Google Sheet and emails contactEmail). Redeploy the script as a new version after editing it. -->
+    <contactScriptUrl>https://script.google.com/macros/s/AKfycbzTJ87BCSOadKLbUPLDSRn5iXmyGDTd8YMipEL1aivtDM8twQn7ih-afktOW7FhVjjKgQ/exec</contactScriptUrl>
     <!-- dark, light or fire -->
     <defaultTheme>dark</defaultTheme>
     <!-- Subject pre-filled when the form is opened from each button -->
@@ -26,8 +24,8 @@
     <item key="themeFire">🔥 Fire</item>
     <item key="sendBtn">Send message</item>
     <item key="sendFail">We could not send your message. Please try again in a moment, or</item>
-    <item key="sentOk2">Thank you! Your message has been submitted. We will reply by email.</item>
-    <item key="needActivation">The contact form needs a one-time activation. Please check the inbox of {email} for an email from FormSubmit, click Activate Form, then send your message again.</item>
+    <item key="captchaQ">Security check: what is {a} + {b}?</item>
+    <item key="captchaWrong">That answer is not right. Please try the security check again.</item>
     <item key="useMailApp">use your email app instead.</item>
     <item key="sendingBtn">Sending…</item>
     <item key="sentTitleOk">Message sent</item>

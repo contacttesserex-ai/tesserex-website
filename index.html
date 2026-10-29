@@ -2,7 +2,6 @@
 
 <html data-theme="dark" lang="en">
 <head>
-<script>if(window.name==="cfframe"&&location.hash==="#cf-sent"){parent.postMessage("cf-sent","*");window.stop()}</script>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <title>TessereX — Instant Global Payments</title>
@@ -127,10 +126,8 @@ footer a{color:var(--o);text-decoration:none}
     <contactEmail>contact.tesserex@gmail.com</contactEmail>
     <!-- Contact form subject is: subjectPrefix + " - " + the subject the visitor types -->
     <subjectPrefix>Get In Touch section - TessereX Website</subjectPrefix>
-    <!-- Where the contact form posts the message so it is emailed directly to contactEmail. {email} is replaced by contactEmail. Uses the free FormSubmit service: the owner of the address must confirm it once by clicking the activation email sent after the first message. -->
-    <formEndpoint>https://formsubmit.co/ajax/{email}</formEndpoint>
-    <!-- Fallback used if the request above is blocked: the classic FormSubmit HTML-form POST (same service, same email) -->
-    <formPostEndpoint>https://formsubmit.co/{email}</formPostEndpoint>
+    <!-- Google Apps Script web app that receives the contact form (saves to a Google Sheet and emails contactEmail). Redeploy the script as a new version after editing it. -->
+    <contactScriptUrl>https://script.google.com/macros/s/AKfycbzTJ87BCSOadKLbUPLDSRn5iXmyGDTd8YMipEL1aivtDM8twQn7ih-afktOW7FhVjjKgQ/exec</contactScriptUrl>
     <!-- dark, light or fire -->
     <defaultTheme>dark</defaultTheme>
     <!-- Subject pre-filled when the form is opened from each button -->
@@ -147,8 +144,8 @@ footer a{color:var(--o);text-decoration:none}
     <item key="themeFire">🔥 Fire</item>
     <item key="sendBtn">Send message</item>
     <item key="sendFail">We could not send your message. Please try again in a moment, or</item>
-    <item key="sentOk2">Thank you! Your message has been submitted. We will reply by email.</item>
-    <item key="needActivation">The contact form needs a one-time activation. Please check the inbox of {email} for an email from FormSubmit, click Activate Form, then send your message again.</item>
+    <item key="captchaQ">Security check: what is {a} + {b}?</item>
+    <item key="captchaWrong">That answer is not right. Please try the security check again.</item>
     <item key="useMailApp">use your email app instead.</item>
     <item key="sendingBtn">Sending…</item>
     <item key="sentTitleOk">Message sent</item>
@@ -298,8 +295,8 @@ footer a{color:var(--o);text-decoration:none}
 </content></script>
 <script>
 (function(){const x=new DOMParser().parseFromString(document.getElementById('site-xml').textContent,'application/xml'),q=s=>{const e=x.querySelector(s);return e?e.textContent.trim():''};
-const bad=!!x.querySelector('parsererror'),C={company:q('config > company'),email:q('config > contactEmail'),prefix:q('config > subjectPrefix'),endpoint:q('config > formEndpoint'),post:q('config > formPostEndpoint'),theme:q('config > defaultTheme')||'dark',sub:{partner:q('subjectDefaults > partner'),investor:q('subjectDefaults > investor'),general:q('subjectDefaults > general')}};
-const T={},U={sending:'Sending…',delivered:'Delivered ✓',live:'live',themeLight:'☀ Light',themeDark:'🌙 Dark',themeFire:'🔥 Fire',sendBtn:'Send message',sendFail:'We could not send your message. Please try again in a moment, or',useMailApp:'use your email app instead.',sentOk2:'Thank you! Your message has been submitted. We will reply by email.',needActivation:'The contact form needs a one-time activation. Please check the inbox of {email} for an email from FormSubmit, click Activate Form, then send your message again.',sendingBtn:'Sending…',sentTitleOk:'Message sent',sentOk:'Thank you! Your message has been sent to our team.'};
+const bad=!!x.querySelector('parsererror'),C={company:q('config > company'),email:q('config > contactEmail'),prefix:q('config > subjectPrefix'),script:q('config > contactScriptUrl'),theme:q('config > defaultTheme')||'dark',sub:{partner:q('subjectDefaults > partner'),investor:q('subjectDefaults > investor'),general:q('subjectDefaults > general')}};
+const T={},U={sending:'Sending…',delivered:'Delivered ✓',live:'live',themeLight:'☀ Light',themeDark:'🌙 Dark',themeFire:'🔥 Fire',sendBtn:'Send message',sendFail:'We could not send your message. Please try again in a moment, or',useMailApp:'use your email app instead.',captchaQ:'Security check: what is {a} + {b}?',captchaWrong:'That answer is not right. Please try the security check again.',sendingBtn:'Sending…',sentTitleOk:'Message sent',sentOk:'Thank you! Your message has been sent to our team.'};
 if(!bad){x.querySelectorAll('texts > text').forEach(e=>T[e.getAttribute('key')]=e.textContent);x.querySelectorAll('ui > item').forEach(e=>U[e.getAttribute('key')]=e.textContent)}
 const fill=s=>s.split('{company}').join(C.company).split('{email}').join(C.email);
 window.SITE={CONFIG:C,T:T,U:U,fill:fill};
@@ -508,6 +505,8 @@ requestAnimationFrame(frame);
 <label data-t="contact.label.3" for="em">Your email</label><input autocomplete="email" id="em" name="em" required="" type="email"/>
 <label data-t="contact.label.4" for="msg">Message</label><textarea id="msg" name="msg" required=""></textarea>
 
+<div style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden" aria-hidden="true"><label for="website">Website</label><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+<label for="cap" id="capl">Security check</label><input id="cap" name="captcha" inputmode="numeric" autocomplete="off" required>
 <p class="n err" id="cferr" hidden style="margin:14px 0 0"></p>
 <div class="fa"><button class="btn alt sm" data-t="contact.btn.1" id="cfx" type="button">Close</button><button class="btn sm" data-t="contact.btn.2" type="submit">Send message</button></div></form><div class="mid" hidden="" id="cfok"><div class="ok" style="transform:none;margin:6px auto 14px">✓</div><h3 id="cft">Thank you</h3><p class="n" id="cfmsg"></p><div class="fa" style="justify-content:center"><button class="btn sm" data-t="contact.btn.3" id="cfd" type="button">Close</button></div></div></dialog>
 
@@ -519,33 +518,24 @@ st.forEach((e,j)=>e.addEventListener('click',()=>{go(j);run()}));run();
 })();
 </script>
 <script>
-(function(){const S=window.SITE,C=S.CONFIG,U=S.U,d=document.getElementById('cf'),f=document.getElementById('cfm'),ok=document.getElementById('cfok'),mm=document.getElementById('cfmsg'),ct=document.getElementById('cft'),er=document.getElementById('cferr'),btn=f.querySelector('button[type=submit]'),sub=s=>s.split('{email}').join(C.email);
-const fr=document.createElement('iframe');fr.name=fr.id='cfframe';fr.hidden=true;fr.title='';document.body.appendChild(fr);
-function open(k){f.reset();f.hidden=false;ok.hidden=true;er.hidden=true;f.subject.value=C.sub[k]||'';d.showModal()}
+(function(){const S=window.SITE,C=S.CONFIG,U=S.U,d=document.getElementById('cf'),f=document.getElementById('cfm'),ok=document.getElementById('cfok'),mm=document.getElementById('cfmsg'),ct=document.getElementById('cft'),er=document.getElementById('cferr'),btn=f.querySelector('button[type=submit]'),capL=document.getElementById('capl');
+let A=0,B=0,t0=0;
+function open(k){f.reset();f.hidden=false;ok.hidden=true;er.hidden=true;f.subject.value=C.sub[k]||'';A=2+Math.floor(Math.random()*8);B=2+Math.floor(Math.random()*8);capL.textContent=U.captchaQ.replace('{a}',A).replace('{b}',B);t0=Date.now();d.showModal()}
 document.querySelectorAll('a[data-topic]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();open(a.dataset.topic)}));
 document.getElementById('cfx').addEventListener('click',()=>d.close());document.getElementById('cfd').addEventListener('click',()=>d.close());
 d.addEventListener('click',e=>{if(e.target===d)d.close()});
 function sent(m){f.hidden=true;ok.hidden=false;ct.textContent=U.sentTitleOk;mm.textContent=m}
+function show(m){er.hidden=false;er.textContent=m}
 function fail(subj){er.hidden=false;er.textContent=U.sendFail+' ';const a=document.createElement('a');a.href='mailto:'+C.email+'?subject='+encodeURIComponent(subj)+'&body='+encodeURIComponent('Name: '+f.nm.value+'\nEmail: '+f.em.value+'\n\n'+f.msg.value);a.textContent=U.useMailApp;a.style.cssText='color:inherit;text-decoration:underline';er.appendChild(a)}
-function viaForm(url,data){return new Promise((res,rej)=>{const fm=document.createElement('form');fm.method='POST';fm.action=url;fm.target='cfframe';fm.hidden=true;
- for(const k in data){const i=document.createElement('input');i.type='hidden';i.name=k;i.value=data[k];fm.appendChild(i)}
- document.body.appendChild(fm);let done=false,t=null;
- const fin=(good,e)=>{if(done)return;done=true;clearTimeout(t);removeEventListener('message',onm);fm.remove();fr.onload=null;good?res():rej(e||new Error('unconfirmed'))};
- const onm=e=>{if(e.source===fr.contentWindow&&e.data==='cf-sent')fin(true)};addEventListener('message',onm);
- t=setTimeout(()=>fin(false,new Error('timeout')),8000);fr.onload=()=>setTimeout(()=>fin(false),900);
- try{fm.submit()}catch(x){fin(false,x)}})}
-f.addEventListener('submit',async e=>{e.preventDefault();er.hidden=true;const subj=C.prefix+' - '+f.subject.value.trim(),orig=btn.textContent,
- data={name:f.nm.value,email:f.em.value,subject:f.subject.value.trim(),message:f.msg.value,_subject:subj,_template:'table',_captcha:'false'};
+f.addEventListener('submit',async e=>{e.preventDefault();er.hidden=true;
+ if(f.website.value){sent(U.sentOk);return}
+ if(parseInt(f.captcha.value,10)!==A+B){show(U.captchaWrong);return}
+ const subj=C.prefix+' - '+f.subject.value.trim(),orig=btn.textContent,fd=new FormData();
+ fd.append('name',f.nm.value);fd.append('email',f.em.value);fd.append('subject',subj);fd.append('topic',f.subject.value.trim());fd.append('message',f.msg.value);
+ fd.append('website',f.website.value);fd.append('cap_a',A);fd.append('cap_b',B);fd.append('cap_answer',f.captcha.value);fd.append('elapsed',Date.now()-t0);
  btn.disabled=true;btn.textContent=U.sendingBtn;
- try{let r=null,j={};const ajax=sub(C.endpoint);
-  if(ajax){try{r=await fetch(ajax,{method:'POST',headers:{'Content-Type':'application/json',Accept:'application/json'},body:JSON.stringify(data)});j=await r.json().catch(()=>({}))}catch(x){r=null}}
-  if(r){if(r.ok&&j.success!==false&&j.success!=='false'){sent(U.sentOk);return}
-   console.warn('Form service replied:',j.message);
-   if(/activat/i.test(j.message||'')){er.hidden=false;er.textContent=sub(U.needActivation);return}
-   throw new Error('refused')}
-  const post=sub(C.post);if(!post||!/^https?:/.test(location.protocol))throw new Error('no endpoint');
-  data._next=location.href.split('#')[0]+'#cf-sent';await viaForm(post,data);sent(U.sentOk2)}
- catch(err){fail(subj)}finally{btn.disabled=false;btn.textContent=orig}})})();
+ try{if(!C.script)throw new Error('No script URL');const r=await fetch(C.script,{method:'POST',body:fd}),j=await r.json();if(j.result!=='success')throw new Error(j.error||'refused');sent(U.sentOk)}
+ catch(err){console.warn('Contact form:',err);fail(subj)}finally{btn.disabled=false;btn.textContent=orig}})})();
 </script>
 </body>
 </html>
