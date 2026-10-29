@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<content>
+  <!-- Site settings. Change the email, subject prefix or default theme here only. -->
+  <config>
+    <company>Tesserex Inc.</company>
+    <contactEmail>contact.tesserex@gmail.com</contactEmail>
+    <!-- Contact form subject is: subjectPrefix + " - " + the subject the visitor types -->
+    <subjectPrefix>Get In Touch section - TessereX Website</subjectPrefix>
+    <!-- Where the contact form posts the message so it is emailed directly to contactEmail. {email} is replaced by contactEmail. Uses the free FormSubmit service: the owner of the address must confirm it once by clicking the activation email sent after the first message. -->
+    <formEndpoint>https://formsubmit.co/ajax/{email}</formEndpoint>
+    <!-- Fallback used if the request above is blocked: the classic FormSubmit HTML-form POST (same service, same email) -->
+    <formPostEndpoint>https://formsubmit.co/{email}</formPostEndpoint>
+    <!-- dark, light or fire -->
+    <defaultTheme>dark</defaultTheme>
+    <!-- Subject pre-filled when the form is opened from each button -->
+    <subjectDefaults><partner>Partner enquiry</partner><investor>Investor enquiry</investor><general></general></subjectDefaults>
+  </config>
+
+  <!-- Short labels and messages used by scripts -->
+  <ui>
+    <item key="sending">Sending…</item>
+    <item key="delivered">Delivered ✓</item>
+    <item key="live">live</item>
+    <item key="themeLight">☀ Light</item>
+    <item key="themeDark">🌙 Dark</item>
+    <item key="themeFire">🔥 Fire</item>
+    <item key="sendBtn">Send message</item>
+    <item key="sendFail">We could not send your message. Please try again in a moment, or</item>
+    <item key="sentOk2">Thank you! Your message has been submitted. We will reply by email.</item>
+    <item key="needActivation">The contact form needs a one-time activation. Please check the inbox of {email} for an email from FormSubmit, click Activate Form, then send your message again.</item>
+    <item key="useMailApp">use your email app instead.</item>
+    <item key="sendingBtn">Sending…</item>
+    <item key="sentTitleOk">Message sent</item>
+    <item key="sentOk">Thank you! Your message has been sent to our team.</item>
+    <item key="needFields">Please fill in every field.</item>
+  </ui>
+
+  <!-- Page copy. Each value may contain simple HTML such as <span class="grad">. {company} is replaced by the company name above. -->
+  <texts>
+    <!-- nav -->
+    <text key="nav.a.1"><![CDATA[Why TessereX]]></text>
+    <text key="nav.a.2"><![CDATA[How it works]]></text>
+    <text key="nav.a.3"><![CDATA[Mobile payments]]></text>
+    <text key="nav.a.4"><![CDATA[Technology]]></text>
+    <text key="nav.a.5"><![CDATA[Who it’s for]]></text>
+    <text key="nav.btn.1"><![CDATA[Get in touch]]></text>
+    <!-- top -->
+    <text key="top.eyebrow.1"><![CDATA[Instant global payments]]></text>
+    <text key="top.h1.1"><![CDATA[Money that arrives <span class="grad">the moment you send it</span>]]></text>
+    <text key="top.lead.1"><![CDATA[TessereX is payment infrastructure for a borderless world. Stablecoin and CBDC rails move value across countries in seconds, any hour of any day, with costs you can see upfront.]]></text>
+    <text key="top.btn.1"><![CDATA[Partner with us]]></text>
+    <text key="top.btn.2"><![CDATA[See how it works]]></text>
+    <text key="top.span.1"><![CDATA[Instant settlement]]></text>
+    <text key="top.span.2"><![CDATA[Open 24 × 7 × 365]]></text>
+    <text key="top.span.3"><![CDATA[Transparent costs]]></text>
+    <text key="top.span.4"><![CDATA[Compliance built in]]></text>
+    <!-- why -->
+    <text key="why.h2.1"><![CDATA[Cross-border payments, <span class="grad">rebuilt</span>]]></text>
+    <text key="why.sub.1"><![CDATA[Today’s international transfers hop through banks, cut-off times and time zones. TessereX replaces the chain with one direct, always-on rail.]]></text>
+    <text key="why.h3.1"><![CDATA[Traditional cross-border]]></text>
+    <text key="why.span.1"><![CDATA[Settlement]]></text>
+    <text key="why.b.1"><![CDATA[Days]]></text>
+    <text key="why.span.2"><![CDATA[Availability]]></text>
+    <text key="why.b.2"><![CDATA[Banking hours]]></text>
+    <text key="why.span.3"><![CDATA[Route]]></text>
+    <text key="why.b.3"><![CDATA[Chain of intermediaries]]></text>
+    <text key="why.span.4"><![CDATA[Fees]]></text>
+    <text key="why.b.4"><![CDATA[Revealed late]]></text>
+    <text key="why.span.5"><![CDATA[Tracking]]></text>
+    <text key="why.b.5"><![CDATA[Limited]]></text>
+    <text key="why.h3.2"><![CDATA[With TessereX]]></text>
+    <text key="why.span.6"><![CDATA[Settlement]]></text>
+    <text key="why.b.6"><![CDATA[Instant]]></text>
+    <text key="why.span.7"><![CDATA[Availability]]></text>
+    <text key="why.b.7"><![CDATA[24 × 7 × 365]]></text>
+    <text key="why.span.8"><![CDATA[Route]]></text>
+    <text key="why.b.8"><![CDATA[Direct liquidity rail]]></text>
+    <text key="why.span.9"><![CDATA[Fees]]></text>
+    <text key="why.b.9"><![CDATA[Transparent]]></text>
+    <text key="why.span.10"><![CDATA[Tracking]]></text>
+    <text key="why.b.10"><![CDATA[End-to-end, live]]></text>
+    <!-- how -->
+    <text key="how.h2.1"><![CDATA[From send to settled in <span class="grad">four steps</span>]]></text>
+    <text key="how.sub.1"><![CDATA[One simple experience for the sender, one rigorous engine underneath.]]></text>
+    <text key="how.h3.1"><![CDATA[Send]]></text>
+    <text key="how.p.1"><![CDATA[Choose an amount and a destination currency. You see the full cost before you confirm.]]></text>
+    <text key="how.h3.2"><![CDATA[Convert]]></text>
+    <text key="how.p.2"><![CDATA[Value moves onto stablecoin or CBDC rails, so it is ready to travel without a correspondent chain.]]></text>
+    <text key="how.h3.3"><![CDATA[Route &amp; verify]]></text>
+    <text key="how.p.3"><![CDATA[The network picks the best liquidity path while compliance checks run inline.]]></text>
+    <text key="how.h3.4"><![CDATA[Settle]]></text>
+    <text key="how.p.4"><![CDATA[The recipient receives funds in their own currency, final and traceable.]]></text>
+    <!-- mobile -->
+    <text key="mobile.h2.1"><![CDATA[Instant payments, <span class="grad">right from your phone</span>]]></text>
+    <text key="mobile.sub.1"><![CDATA[Scan, confirm, done. The same global rails, wrapped in a flow anyone can use in a few taps. Tap a step to preview it.]]></text>
+    <text key="mobile.h3.1"><![CDATA[Scan or choose]]></text>
+    <text key="mobile.p.1"><![CDATA[Scan a QR code or pick a contact. Local QR and UPI-style flows are supported.]]></text>
+    <text key="mobile.h3.2"><![CDATA[Review upfront]]></text>
+    <text key="mobile.p.2"><![CDATA[See what you pay and what the recipient gets before you confirm.]]></text>
+    <text key="mobile.h3.3"><![CDATA[Authorise securely]]></text>
+    <text key="mobile.p.3"><![CDATA[Approve with biometrics while compliance checks run in the background.]]></text>
+    <text key="mobile.h3.4"><![CDATA[Delivered]]></text>
+    <text key="mobile.p.4"><![CDATA[Funds land in seconds, with a live receipt you can share.]]></text>
+    <text key="mobile.h4.1"><![CDATA[Send money]]></text>
+    <text key="mobile.small.1"><![CDATA[Scan a code or search contacts]]></text>
+    <text key="mobile.small.2"><![CDATA[Point your camera at a QR code]]></text>
+    <text key="mobile.span.1"><![CDATA[Aarav]]></text>
+    <text key="mobile.span.2"><![CDATA[Maya]]></text>
+    <text key="mobile.span.3"><![CDATA[Kenji]]></text>
+    <text key="mobile.h4.2"><![CDATA[Review]]></text>
+    <text key="mobile.small.3"><![CDATA[Aarav Mehta · Mumbai]]></text>
+    <text key="mobile.amt.1"><![CDATA[$100.00]]></text>
+    <text key="mobile.span.4"><![CDATA[Recipient gets]]></text>
+    <text key="mobile.b.1"><![CDATA[INR, rate locked]]></text>
+    <text key="mobile.span.5"><![CDATA[Fees]]></text>
+    <text key="mobile.b.2"><![CDATA[Shown upfront]]></text>
+    <text key="mobile.span.6"><![CDATA[Arrives]]></text>
+    <text key="mobile.b.3"><![CDATA[In seconds]]></text>
+    <text key="mobile.pbtn.1"><![CDATA[Confirm &amp; send]]></text>
+    <text key="mobile.h4.3"><![CDATA[Authorise]]></text>
+    <text key="mobile.small.4"><![CDATA[Confirm it’s you]]></text>
+    <text key="mobile.small.5"><![CDATA[Verifying and running compliance checks…]]></text>
+    <text key="mobile.h4.4"><![CDATA[Sent instantly]]></text>
+    <text key="mobile.small.6"><![CDATA[Aarav Mehta received the money]]></text>
+    <text key="mobile.span.7"><![CDATA[Amount]]></text>
+    <text key="mobile.b.4"><![CDATA[$100.00]]></text>
+    <text key="mobile.span.8"><![CDATA[Status]]></text>
+    <text key="mobile.b.5"><![CDATA[Delivered ✓]]></text>
+    <text key="mobile.span.9"><![CDATA[Receipt]]></text>
+    <text key="mobile.b.6"><![CDATA[Live]]></text>
+    <text key="mobile.pbtn.2"><![CDATA[Done]]></text>
+    <text key="mobile.mid.1"><![CDATA[Illustrative screens]]></text>
+    <!-- tech -->
+    <text key="tech.h2.1"><![CDATA[Built for <span class="grad">speed, trust and scale</span>]]></text>
+    <text key="tech.sub.1"><![CDATA[The technology that makes instant settlement dependable for institutions and everyday users.]]></text>
+    <text key="tech.h3.1"><![CDATA[Stablecoin &amp; CBDC native]]></text>
+    <text key="tech.p.1"><![CDATA[Designed from day one for tokenised money, bridging private and sovereign digital currencies.]]></text>
+    <text key="tech.h3.2"><![CDATA[Global liquidity network]]></text>
+    <text key="tech.p.2"><![CDATA[Banks, dealers and fintechs plug into shared liquidity so payments always find a path.]]></text>
+    <text key="tech.h3.3"><![CDATA[Partner badges &amp; incentives]]></text>
+    <text key="tech.p.3"><![CDATA[Non-fungible operational badges and a multi-currency token reward system keep liquidity partners aligned.]]></text>
+    <text key="tech.h3.4"><![CDATA[Compliance by design]]></text>
+    <text key="tech.p.4"><![CDATA[Regulatory and policy rules are enforced in the rails, not added afterwards.]]></text>
+    <text key="tech.h3.5"><![CDATA[Wallet &amp; local payment flows]]></text>
+    <text key="tech.p.5"><![CDATA[Multi-asset wallets on web and mobile, with QR and UPI-style flows for everyday payments.]]></text>
+    <text key="tech.h3.6"><![CDATA[AI agent interface]]></text>
+    <text key="tech.p.6"><![CDATA[Command your wallet and trades in plain language through an agent that works on live account state.]]></text>
+    <!-- who -->
+    <text key="who.h2.1"><![CDATA[One network, <span class="grad">every participant</span>]]></text>
+    <text key="who.sub.1"><![CDATA[Whether you move money, hold liquidity or build products, TessereX gives you a faster rail.]]></text>
+    <text key="who.h3.1"><![CDATA[Banks &amp; fintechs]]></text>
+    <text key="who.p.1"><![CDATA[Offer customers instant international transfers without building rails yourself.]]></text>
+    <text key="who.h3.2"><![CDATA[Liquidity partners]]></text>
+    <text key="who.p.2"><![CDATA[Earn from the flows you enable, with recognised standing on the network.]]></text>
+    <text key="who.h3.3"><![CDATA[Businesses]]></text>
+    <text key="who.p.3"><![CDATA[Pay suppliers and teams abroad in seconds, with predictable costs.]]></text>
+    <text key="who.h3.4"><![CDATA[Individuals]]></text>
+    <text key="who.p.4"><![CDATA[Send money home or across borders and see it arrive straight away.]]></text>
+    <!-- cta -->
+    <text key="cta.h2.1"><![CDATA[Move money at the speed of <span class="grad">now</span>]]></text>
+    <text key="cta.p.1"><![CDATA[Talk to us about partnerships, integrations or investment.]]></text>
+    <text key="cta.btn.1"><![CDATA[Partner enquiries]]></text>
+    <text key="cta.btn.2"><![CDATA[Investor relations]]></text>
+    <!-- footer -->
+    <text key="footer.ft.1"><![CDATA[Instant global payments · Stablecoins · CBDCs<br/>© 2026 {company} All rights reserved.]]></text>
+    <!-- contact -->
+    <text key="contact.h3.1"><![CDATA[Get in touch]]></text>
+    <text key="contact.n.1"><![CDATA[Tell us how we can help and we will get back to you by email.]]></text>
+    <text key="contact.label.1"><![CDATA[Subject]]></text>
+    <text key="contact.label.2"><![CDATA[Your name]]></text>
+    <text key="contact.label.3"><![CDATA[Your email]]></text>
+    <text key="contact.label.4"><![CDATA[Message]]></text>
+    <text key="contact.btn.1"><![CDATA[Close]]></text>
+    <text key="contact.btn.2"><![CDATA[Send message]]></text>
+    <text key="contact.btn.3"><![CDATA[Close]]></text>
+  </texts>
+</content>
