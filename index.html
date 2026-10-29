@@ -2,7 +2,7 @@
 
 <html data-theme="dark" lang="en">
 <head>
-<meta name="tesserex-site-version" content="v3">
+<meta name="tesserex-site-version" content="v4">
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1, viewport-fit=cover" name="viewport"/>
 <title>TessereX — Instant Global Payments</title>
@@ -545,6 +545,11 @@ f.addEventListener('submit',async e=>{e.preventDefault();er.hidden=true;
  btn.disabled=true;btn.textContent=U.sendingBtn;
  try{if(!C.script)throw new Error('No script URL');const r=await fetch(C.script,{method:'POST',body:fd}),j=await r.json();if(j.result!=='success')throw new Error(j.error||'refused');if(!j.version)console.warn('TessereX: the contact script is an OLD version. Paste apps-script-contact.gs and deploy it as a New version.');sent(U.sentOk)}
  catch(err){console.warn('Contact form:',err);fail(full)}finally{btn.disabled=false;btn.textContent=orig}})})();
+</script>
+<script>
+(function(){const C=window.SITE.CONFIG;if(!/[?&]check(=|&|$)/.test(location.search)||!C.script)return;
+const b=document.createElement('div');b.style.cssText='position:fixed;left:50%;bottom:18px;transform:translateX(-50%);z-index:99999;padding:12px 18px;border-radius:12px;font:600 14px system-ui,sans-serif;background:#111;color:#fff;box-shadow:0 10px 30px rgba(0,0,0,.4);max-width:90vw;text-align:center';b.textContent='Checking the contact script…';document.body.appendChild(b);
+fetch(C.script).then(r=>r.json()).then(j=>{if(j.version){b.textContent='Contact script is live: version '+j.version;b.style.background='#0a7a3b'}else{b.textContent='Contact script is the OLD version. Deploy the new one (see apps-script-contact.gs).';b.style.background='#b42318'}}).catch(()=>{b.textContent='Contact script is the OLD version or cannot be reached. Open the script URL in a browser to check.';b.style.background='#b42318'})})();
 </script>
 </body>
 </html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FormSubmit test</title>
+<style>
+body{font-family:system-ui,sans-serif;max-width:440px;margin:40px auto;padding:0 16px;color:#111}
+label{display:block;margin-top:12px;font-size:14px}
+input,textarea{width:100%;padding:10px;border:1px solid #bbb;border-radius:8px;font:inherit;box-sizing:border-box}
+button{margin-top:16px;padding:12px 20px;border:0;border-radius:8px;background:#2358e8;color:#fff;font:inherit;cursor:pointer}
+p{font-size:14px;color:#444}
+</style>
+</head>
+<body>
+<h2>FormSubmit test</h2>
+<p>Open this file in your browser, fill it in and press Send. The first time, FormSubmit emails contact.tesserex@gmail.com an activation link. Click <b>Activate Form</b> in that email, then send again to receive the message.</p>
+<form action="https://formsubmit.co/contact.tesserex@gmail.com" method="POST">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_subject" value="Get In Touch section - TessereX Website - Test">
+  <label>Name<input type="text" name="name" required></label>
+  <label>Email<input type="email" name="email" required></label>
+  <label>Message<textarea name="message" rows="4" required></textarea></label>
+  <button type="submit">Send</button>
+</form>
+</body>
+</html>

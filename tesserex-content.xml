@@ -1,17 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <content>
-  <!-- Site settings. Change the email, subject prefix or default theme here only. -->
+  <!-- Site settings. Change the email, subject format, enquiry types or default theme here only. -->
   <config>
     <company>Tesserex Inc.</company>
     <contactEmail>contact.tesserex@gmail.com</contactEmail>
-    <!-- Contact form subject is: subjectPrefix + " - " + the subject the visitor types -->
-    <subjectPrefix>Get In Touch section - TessereX Website</subjectPrefix>
+    <!-- Email subject format. {type} = enquiry type, {subject} = subject typed by the visitor. Keep in step with SUBJECT_FORMAT in the Apps Script. -->
+    <subjectFormat>TessereX Website - {type} - {subject}</subjectFormat>
+    <!-- Enquiry types in the form. key = which button preselects it (partner, investor, web). Keep in step with TYPES in the Apps Script. -->
+    <enquiryTypes>
+      <type key="partner">Partner Enquiries</type>
+      <type key="investor">Investor Relations</type>
+      <type key="web">Web Message</type>
+    </enquiryTypes>
     <!-- Google Apps Script web app that receives the contact form (saves to a Google Sheet and emails contactEmail). Redeploy the script as a new version after editing it. -->
     <contactScriptUrl>https://script.google.com/macros/s/AKfycbzTJ87BCSOadKLbUPLDSRn5iXmyGDTd8YMipEL1aivtDM8twQn7ih-afktOW7FhVjjKgQ/exec</contactScriptUrl>
     <!-- dark, light or fire -->
     <defaultTheme>dark</defaultTheme>
-    <!-- Subject pre-filled when the form is opened from each button -->
-    <subjectDefaults><partner>Partner enquiry</partner><investor>Investor enquiry</investor><general></general></subjectDefaults>
   </config>
 
   <!-- Short labels and messages used by scripts -->
@@ -162,6 +166,7 @@
     <!-- footer -->
     <text key="footer.ft.1"><![CDATA[Instant global payments · Stablecoins · CBDCs<br/>© 2026 {company} All rights reserved.]]></text>
     <!-- contact -->
+    <text key="contact.label.enq"><![CDATA[Enquiry type]]></text>
     <text key="contact.h3.1"><![CDATA[Get in touch]]></text>
     <text key="contact.n.1"><![CDATA[Tell us how we can help and we will get back to you by email.]]></text>
     <text key="contact.label.1"><![CDATA[Subject]]></text>
