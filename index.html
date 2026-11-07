@@ -119,201 +119,26 @@ footer a{color:var(--o);text-decoration:none}
 </style>
 </meta></head>
 <body>
-<script type="application/xml" id="site-xml"><?xml version="1.0" encoding="UTF-8"?>
-<content>
-  <!-- Site settings. Change the email, subject format, enquiry types or default theme here only. -->
-  <config>
-    <company>Tesserex Inc.</company>
-    <contactEmail>contact.tesserex@gmail.com</contactEmail>
-    <!-- Email subject format. {type} = enquiry type, {subject} = subject typed by the visitor. Keep in step with SUBJECT_FORMAT in the Apps Script. -->
-    <subjectFormat>TessereX Website - {type} - {subject}</subjectFormat>
-    <!-- Enquiry types in the form. key = which button preselects it (partner, investor, web). Keep in step with TYPES in the Apps Script. -->
-    <enquiryTypes>
-      <type key="partner">Partner Enquiries</type>
-      <type key="investor">Investor Relations</type>
-      <type key="web">Web Message</type>
-    </enquiryTypes>
-    <!-- Google Apps Script web app that receives the contact form (saves to a Google Sheet and emails contactEmail). Redeploy the script as a new version after editing it. -->
-    <contactScriptUrl>https://script.google.com/macros/s/AKfycbwOLANnTR925253sNoU3lbX4AB79NQVxHRUoLaYY5vLMewjwdZ6nNE3XBMZhI2AeA4fPA/exec</contactScriptUrl>
-    <!-- dark, light or fire -->
-    <defaultTheme>fire</defaultTheme>
-  </config>
-
-  <!-- Short labels and messages used by scripts -->
-  <ui>
-    <item key="sending">Sending…</item>
-    <item key="delivered">Delivered ✓</item>
-    <item key="live">live</item>
-    <item key="themeLight">☀ Light</item>
-    <item key="themeDark">🌙 Dark</item>
-    <item key="themeFire">🔥 Fire</item>
-    <item key="sendBtn">Send message</item>
-    <item key="sendFail">We could not send your message. Please try again in a moment, or</item>
-    <item key="captchaQ">Security check: what is {a} + {b}?</item>
-    <item key="captchaWrong">That answer is not right. Please try the security check again.</item>
-    <item key="useMailApp">use your email app instead.</item>
-    <item key="sendingBtn">Sending…</item>
-    <item key="sentTitleOk">Message sent</item>
-    <item key="sentOk">Thank you! Your message has been sent to our team.</item>
-    <item key="needFields">Please fill in every field.</item>
-  </ui>
-
-  <!-- Page copy. Each value may contain simple HTML such as <span class="grad">. {company} is replaced by the company name above. -->
-  <texts>
-    <!-- page title -->
-    <text key="meta.title"><![CDATA[TessereX — Instant Global Payments]]></text>
-    <!-- nav -->
-    <text key="nav.a.1"><![CDATA[Why TessereX]]></text>
-    <text key="nav.a.2"><![CDATA[How it works]]></text>
-    <text key="nav.a.3"><![CDATA[Mobile payments]]></text>
-    <text key="nav.a.4"><![CDATA[Technology]]></text>
-    <text key="nav.a.5"><![CDATA[Who it’s for]]></text>
-    <text key="nav.btn.1"><![CDATA[Get in touch]]></text>
-    <!-- top -->
-    <text key="top.eyebrow.1"><![CDATA[Instant global payments]]></text>
-    <text key="top.h1.1"><![CDATA[Money that arrives <span class="grad">the moment you send it</span>]]></text>
-    <text key="top.lead.1"><![CDATA[TessereX is payment infrastructure for a borderless world. Stablecoin and CBDC rails move value across countries in seconds, any hour of any day, with costs you can see upfront.]]></text>
-    <text key="top.btn.1"><![CDATA[Partner with us]]></text>
-    <text key="top.btn.2"><![CDATA[See how it works]]></text>
-    <text key="top.span.1"><![CDATA[Instant settlement]]></text>
-    <text key="top.span.2"><![CDATA[Open 24 × 7 × 365]]></text>
-    <text key="top.span.3"><![CDATA[Transparent costs]]></text>
-    <text key="top.span.4"><![CDATA[Compliance built in]]></text>
-    <!-- why -->
-    <text key="why.h2.1"><![CDATA[Cross-border payments, <span class="grad">rebuilt</span>]]></text>
-    <text key="why.sub.1"><![CDATA[Today’s international transfers hop through banks, cut-off times and time zones. TessereX replaces the chain with one direct, always-on rail.]]></text>
-    <text key="why.h3.1"><![CDATA[Traditional cross-border]]></text>
-    <text key="why.span.1"><![CDATA[Settlement]]></text>
-    <text key="why.b.1"><![CDATA[Days]]></text>
-    <text key="why.span.2"><![CDATA[Availability]]></text>
-    <text key="why.b.2"><![CDATA[Banking hours]]></text>
-    <text key="why.span.3"><![CDATA[Route]]></text>
-    <text key="why.b.3"><![CDATA[Chain of intermediaries]]></text>
-    <text key="why.span.4"><![CDATA[Fees]]></text>
-    <text key="why.b.4"><![CDATA[Revealed late]]></text>
-    <text key="why.span.5"><![CDATA[Tracking]]></text>
-    <text key="why.b.5"><![CDATA[Limited]]></text>
-    <text key="why.h3.2"><![CDATA[With TessereX]]></text>
-    <text key="why.span.6"><![CDATA[Settlement]]></text>
-    <text key="why.b.6"><![CDATA[Instant]]></text>
-    <text key="why.span.7"><![CDATA[Availability]]></text>
-    <text key="why.b.7"><![CDATA[24 × 7 × 365]]></text>
-    <text key="why.span.8"><![CDATA[Route]]></text>
-    <text key="why.b.8"><![CDATA[Direct liquidity rail]]></text>
-    <text key="why.span.9"><![CDATA[Fees]]></text>
-    <text key="why.b.9"><![CDATA[Transparent]]></text>
-    <text key="why.span.10"><![CDATA[Tracking]]></text>
-    <text key="why.b.10"><![CDATA[End-to-end, live]]></text>
-    <!-- how -->
-    <text key="how.h2.1"><![CDATA[From send to settled in <span class="grad">four steps</span>]]></text>
-    <text key="how.sub.1"><![CDATA[One simple experience for the sender, one rigorous engine underneath.]]></text>
-    <text key="how.h3.1"><![CDATA[Send]]></text>
-    <text key="how.p.1"><![CDATA[Choose an amount and a destination currency. You see the full cost before you confirm.]]></text>
-    <text key="how.h3.2"><![CDATA[Convert]]></text>
-    <text key="how.p.2"><![CDATA[Value moves onto stablecoin or CBDC rails, so it is ready to travel without a correspondent chain.]]></text>
-    <text key="how.h3.3"><![CDATA[Route &amp; verify]]></text>
-    <text key="how.p.3"><![CDATA[The network picks the best liquidity path while compliance checks run inline.]]></text>
-    <text key="how.h3.4"><![CDATA[Settle]]></text>
-    <text key="how.p.4"><![CDATA[The recipient receives funds in their own currency, final and traceable.]]></text>
-    <!-- mobile -->
-    <text key="mobile.h2.1"><![CDATA[Instant payments, <span class="grad">right from your phone</span>]]></text>
-    <text key="mobile.sub.1"><![CDATA[Scan, confirm, done. The same global rails, wrapped in a flow anyone can use in a few taps. Tap a step to preview it.]]></text>
-    <text key="mobile.h3.1"><![CDATA[Scan or choose]]></text>
-    <text key="mobile.p.1"><![CDATA[Scan a QR code or pick a contact. Local QR payment flows are supported.]]></text>
-    <text key="mobile.h3.2"><![CDATA[Review upfront]]></text>
-    <text key="mobile.p.2"><![CDATA[See what you pay and what the recipient gets before you confirm.]]></text>
-    <text key="mobile.h3.3"><![CDATA[Authorise securely]]></text>
-    <text key="mobile.p.3"><![CDATA[Approve with biometrics while compliance checks run in the background.]]></text>
-    <text key="mobile.h3.4"><![CDATA[Delivered]]></text>
-    <text key="mobile.p.4"><![CDATA[Funds land in seconds, with a live receipt you can share.]]></text>
-    <text key="mobile.h4.1"><![CDATA[Send money]]></text>
-    <text key="mobile.small.1"><![CDATA[Scan a code or search contacts]]></text>
-    <text key="mobile.small.2"><![CDATA[Point your camera at a QR code]]></text>
-    <text key="mobile.span.1"><![CDATA[Aarav]]></text>
-    <text key="mobile.span.2"><![CDATA[Maya]]></text>
-    <text key="mobile.span.3"><![CDATA[Kenji]]></text>
-    <text key="mobile.h4.2"><![CDATA[Review]]></text>
-    <text key="mobile.small.3"><![CDATA[Aarav Mehta · Mumbai]]></text>
-    <text key="mobile.amt.1"><![CDATA[$100.00]]></text>
-    <text key="mobile.span.4"><![CDATA[Recipient gets]]></text>
-    <text key="mobile.b.1"><![CDATA[INR, rate locked]]></text>
-    <text key="mobile.span.5"><![CDATA[Fees]]></text>
-    <text key="mobile.b.2"><![CDATA[Shown upfront]]></text>
-    <text key="mobile.span.6"><![CDATA[Arrives]]></text>
-    <text key="mobile.b.3"><![CDATA[In seconds]]></text>
-    <text key="mobile.pbtn.1"><![CDATA[Confirm &amp; send]]></text>
-    <text key="mobile.h4.3"><![CDATA[Authorise]]></text>
-    <text key="mobile.small.4"><![CDATA[Confirm it’s you]]></text>
-    <text key="mobile.small.5"><![CDATA[Verifying and running compliance checks…]]></text>
-    <text key="mobile.h4.4"><![CDATA[Sent instantly]]></text>
-    <text key="mobile.small.6"><![CDATA[Aarav Mehta received the money]]></text>
-    <text key="mobile.span.7"><![CDATA[Amount]]></text>
-    <text key="mobile.b.4"><![CDATA[$100.00]]></text>
-    <text key="mobile.span.8"><![CDATA[Status]]></text>
-    <text key="mobile.b.5"><![CDATA[Delivered ✓]]></text>
-    <text key="mobile.span.9"><![CDATA[Receipt]]></text>
-    <text key="mobile.b.6"><![CDATA[Live]]></text>
-    <text key="mobile.pbtn.2"><![CDATA[Done]]></text>
-    <text key="mobile.mid.1"><![CDATA[Illustrative screens]]></text>
-    <!-- tech -->
-    <text key="tech.h2.1"><![CDATA[Built for <span class="grad">speed, trust and scale</span>]]></text>
-    <text key="tech.sub.1"><![CDATA[The technology that makes instant settlement dependable for institutions and everyday users.]]></text>
-    <text key="tech.h3.1"><![CDATA[Stablecoin &amp; CBDC native]]></text>
-    <text key="tech.p.1"><![CDATA[Designed from day one for tokenised money, bridging private and sovereign digital currencies.]]></text>
-    <text key="tech.h3.2"><![CDATA[Global liquidity network]]></text>
-    <text key="tech.p.2"><![CDATA[Banks, dealers and fintechs plug into shared liquidity so payments always find a path.]]></text>
-    <text key="tech.h3.3"><![CDATA[Liquidity incentives]]></text>
-    <text key="tech.p.3"><![CDATA[A multi-currency token reward system keeps liquidity partners aligned and engaged.]]></text>
-    <text key="tech.h3.4"><![CDATA[Compliance by design]]></text>
-    <text key="tech.p.4"><![CDATA[Regulatory and policy rules are enforced in the rails, not added afterwards.]]></text>
-    <text key="tech.h3.5"><![CDATA[Wallet &amp; local payment flows]]></text>
-    <text key="tech.p.5"><![CDATA[Multi-asset wallets on web and mobile, with QR payment flows for everyday use.]]></text>
-    <text key="tech.h3.6"><![CDATA[AI agent interface]]></text>
-    <text key="tech.p.6"><![CDATA[Command your wallet and trades in plain language through an agent that works on live account state.]]></text>
-    <!-- who -->
-    <text key="who.h2.1"><![CDATA[One network, <span class="grad">every participant</span>]]></text>
-    <text key="who.sub.1"><![CDATA[Whether you move money, hold liquidity or build products, TessereX gives you a faster rail.]]></text>
-    <text key="who.h3.1"><![CDATA[Banks &amp; fintechs]]></text>
-    <text key="who.p.1"><![CDATA[Offer customers instant international transfers without building rails yourself.]]></text>
-    <text key="who.h3.2"><![CDATA[Liquidity partners]]></text>
-    <text key="who.p.2"><![CDATA[Earn from the flows you enable as part of a shared liquidity network.]]></text>
-    <text key="who.h3.3"><![CDATA[Businesses]]></text>
-    <text key="who.p.3"><![CDATA[Pay suppliers and teams abroad in seconds, with predictable costs.]]></text>
-    <text key="who.h3.4"><![CDATA[Individuals]]></text>
-    <text key="who.p.4"><![CDATA[Send money home or across borders and see it arrive straight away.]]></text>
-    <!-- cta -->
-    <text key="cta.h2.1"><![CDATA[Move money at the speed of <span class="grad">now</span>]]></text>
-    <text key="cta.p.1"><![CDATA[Talk to us about partnerships, integrations or investment.]]></text>
-    <text key="cta.btn.1"><![CDATA[Partner enquiries]]></text>
-    <text key="cta.btn.2"><![CDATA[Investor relations]]></text>
-    <!-- footer -->
-    <text key="footer.ft.1"><![CDATA[Instant global payments · Stablecoins · CBDCs<br/>© 2026 {company} All rights reserved.]]></text>
-    <!-- contact -->
-    <text key="contact.label.enq"><![CDATA[Enquiry type]]></text>
-    <text key="contact.h3.1"><![CDATA[Get in touch]]></text>
-    <text key="contact.n.1"><![CDATA[Tell us how we can help and we will get back to you by email.]]></text>
-    <text key="contact.label.1"><![CDATA[Subject]]></text>
-    <text key="contact.label.2"><![CDATA[Your name]]></text>
-    <text key="contact.label.3"><![CDATA[Your email]]></text>
-    <text key="contact.label.4"><![CDATA[Message]]></text>
-    <text key="contact.btn.1"><![CDATA[Close]]></text>
-    <text key="contact.btn.2"><![CDATA[Send message]]></text>
-    <text key="contact.btn.3"><![CDATA[Close]]></text>
-  </texts>
-</content></script>
 <script>
-(function(){let xt='';
+(function(){const FILE=location.protocol==='file:',KEY='tx-local-xml';let xt='',cached=false;
 try{const r=new XMLHttpRequest();r.open('GET','tesserex-content.xml',false);r.send();if((r.status===200||r.status===0)&&r.responseText.indexOf('<content')>=0)xt=r.responseText}catch(e){}
 if(!xt){const el=document.getElementById('site-xml');if(el)xt=el.textContent}
+if(!xt&&FILE){try{xt=localStorage.getItem(KEY)||'';cached=!!xt}catch(e){}}
 const x=new DOMParser().parseFromString(xt,'application/xml'),q=s=>{const e=x.querySelector(s);return e?e.textContent.trim():''};
 const bad=!xt||!!x.querySelector('parsererror');
 const C={company:q('config > company'),email:q('config > contactEmail'),fmt:q('config > subjectFormat'),types:[...x.querySelectorAll('enquiryTypes > type')].map(e=>({k:e.getAttribute('key'),v:e.textContent.trim()})),script:q('config > contactScriptUrl'),theme:q('config > defaultTheme')||'dark'};
 const T={},U={};
 if(!bad){x.querySelectorAll('texts > text').forEach(e=>T[e.getAttribute('key')]=e.textContent);x.querySelectorAll('ui > item').forEach(e=>U[e.getAttribute('key')]=e.textContent)}
 const fill=s=>s.split('{company}').join(C.company).split('{email}').join(C.email);
-window.SITE={CONFIG:C,T:T,U:U,fill:fill};
-function apply(){if(bad){document.body.insertAdjacentHTML('afterbegin','<p style="padding:24px;font:16px sans-serif;color:#b00020">The site text could not be loaded. Please upload tesserex-content.xml next to this page.</p>');return}
- document.querySelectorAll('[data-t]').forEach(e=>{const v=T[e.getAttribute('data-t')];if(v!==undefined)e.innerHTML=fill(v)});if(T['meta.title'])document.title=T['meta.title']}
+window.SITE={CONFIG:C,T:T,U:new Proxy(U,{get:(o,k)=>k in o?o[k]:''}),fill:fill};
+function bar(){const d=document.createElement('div');d.id='localxml';
+ d.style.cssText=bad?'position:fixed;inset:0;z-index:9999;display:grid;place-items:center;background:rgba(10,17,38,.94);font:16px/1.55 sans-serif;color:#fff;text-align:center;padding:24px':'position:fixed;left:12px;bottom:12px;z-index:9999;background:#0b1533;color:#fff;font:13px/1.5 sans-serif;padding:10px 14px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,.35)';
+ const btn='<label style="display:inline-block;margin-top:'+(bad?'16':'6')+'px;padding:10px 18px;border-radius:10px;background:linear-gradient(110deg,#2358e8,#0a7fc2);color:#fff;font-weight:700;cursor:pointer">Choose tesserex-content.xml<input type="file" accept=".xml,text/xml,application/xml" hidden></label>';
+ d.innerHTML=bad?'<div style="max-width:540px"><h2 style="margin:0 0 8px;font-size:1.5rem">Local file mode</h2><p>Browsers do not let a page opened straight from disk read <b>tesserex-content.xml</b> by itself. Choose that file once and the page will show its text. The browser remembers it, so you only need to choose it again after you edit the XML.</p>'+btn+'</div>':'<div>Local preview: text comes from a saved copy of tesserex-content.xml.<br>'+btn+'</div>';
+ document.body.appendChild(d);
+ d.querySelector('input').addEventListener('change',e=>{const f=e.target.files[0];if(!f)return;const r=new FileReader();r.onload=()=>{try{localStorage.setItem(KEY,r.result)}catch(z){}location.reload()};r.readAsText(f)})}
+function apply(){if(bad){if(FILE)bar();else document.body.insertAdjacentHTML('afterbegin','<p style="padding:24px;font:16px sans-serif;color:#b00020">The site text could not be loaded. Please upload tesserex-content.xml next to this page.</p>');return}
+ document.querySelectorAll('[data-t]').forEach(e=>{const v=T[e.getAttribute('data-t')];if(v!==undefined)e.innerHTML=fill(v)});if(T['meta.title'])document.title=T['meta.title'];if(FILE&&cached)bar()}
 if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',apply);else apply();
 })();
 </script>
@@ -531,9 +356,10 @@ st.forEach((e,j)=>e.addEventListener('click',()=>{go(j);run()}));run();
 <script>
 (function(){const S=window.SITE,C=S.CONFIG,U=S.U,d=document.getElementById('cf'),f=document.getElementById('cfm'),ok=document.getElementById('cfok'),mm=document.getElementById('cfmsg'),ct=document.getElementById('cft'),er=document.getElementById('cferr'),btn=f.querySelector('button[type=submit]'),capL=document.getElementById('capl'),et=document.getElementById('et');
 C.types.forEach(t=>et.appendChild(new Option(t.v,t.k)));
-let A=0,B=0,t0=0;
+let A=0,B=0,t0=0,cid='';
+function newCheck(){const oa=A,ob=B;do{A=2+Math.floor(Math.random()*8);B=2+Math.floor(Math.random()*8)}while(A===oa&&B===ob);cid=Math.random().toString(36).slice(2)+Date.now().toString(36);capL.textContent=U.captchaQ.replace('{a}',A).replace('{b}',B);f.captcha.value=''}
 const lab=()=>{const o=et.options[et.selectedIndex];return o?o.textContent:''};
-function open(k){f.reset();f.hidden=false;ok.hidden=true;er.hidden=true;et.value=k==='general'?'web':k;A=2+Math.floor(Math.random()*8);B=2+Math.floor(Math.random()*8);capL.textContent=U.captchaQ.replace('{a}',A).replace('{b}',B);t0=Date.now();d.showModal()}
+function open(k){f.reset();f.hidden=false;ok.hidden=true;er.hidden=true;et.value=k==='general'?'web':k;newCheck();t0=Date.now();d.showModal()}
 document.querySelectorAll('a[data-topic]').forEach(a=>a.addEventListener('click',e=>{e.preventDefault();open(a.dataset.topic)}));
 document.getElementById('cfx').addEventListener('click',()=>d.close());document.getElementById('cfd').addEventListener('click',()=>d.close());
 d.addEventListener('click',e=>{if(e.target===d)d.close()});
@@ -542,13 +368,13 @@ function show(m){er.hidden=false;er.textContent=m}
 function fail(full){er.hidden=false;er.textContent=U.sendFail+' ';const a=document.createElement('a');a.href='mailto:'+C.email+'?subject='+encodeURIComponent(full)+'&body='+encodeURIComponent('Name: '+f.nm.value+'\nEmail: '+f.em.value+'\n\n'+f.msg.value);a.textContent=U.useMailApp;a.style.cssText='color:inherit;text-decoration:underline';er.appendChild(a)}
 f.addEventListener('submit',async e=>{e.preventDefault();er.hidden=true;
  if(f.website.value){sent(U.sentOk);return}
- if(parseInt(f.captcha.value,10)!==A+B){show(U.captchaWrong);return}
+ if(parseInt(f.captcha.value,10)!==A+B){show(U.captchaWrong);newCheck();return}
  const typ=lab(),sj=f.subject.value.trim(),full=C.fmt.replace('{type}',typ).replace('{subject}',sj),orig=btn.textContent,fd=new FormData();
  fd.append('type',typ);fd.append('subject',sj);fd.append('name',f.nm.value);fd.append('email',f.em.value);fd.append('message',f.msg.value);
- fd.append('website',f.website.value);fd.append('cap_a',A);fd.append('cap_b',B);fd.append('cap_answer',f.captcha.value);fd.append('elapsed',Date.now()-t0);
+ fd.append('website',f.website.value);fd.append('cap_a',A);fd.append('cap_b',B);fd.append('cap_answer',f.captcha.value);fd.append('cap_id',cid);fd.append('elapsed',Date.now()-t0);
  btn.disabled=true;btn.textContent=U.sendingBtn;
  try{if(!C.script)throw new Error('No script URL');const r=await fetch(C.script,{method:'POST',body:fd}),j=await r.json();if(j.result!=='success')throw new Error(j.error||'refused');if(!j.version)console.warn('TessereX: the contact script is an OLD version. Paste apps-script-contact.gs and deploy it as a New version.');sent(U.sentOk)}
- catch(err){console.warn('Contact form:',err);fail(full)}finally{btn.disabled=false;btn.textContent=orig}})})();
+ catch(err){console.warn('Contact form:',err);fail(full);newCheck()}finally{btn.disabled=false;btn.textContent=orig}})})();
 </script>
 <script>
 (function(){const C=window.SITE.CONFIG;if(!/[?&]check(=|&|$)/.test(location.search)||!C.script)return;
