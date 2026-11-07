@@ -15,7 +15,7 @@
     <!-- Google Apps Script web app that receives the contact form (saves to a Google Sheet and emails contactEmail). Redeploy the script as a new version after editing it. -->
     <contactScriptUrl>https://script.google.com/macros/s/AKfycbzTJ87BCSOadKLbUPLDSRn5iXmyGDTd8YMipEL1aivtDM8twQn7ih-afktOW7FhVjjKgQ/exec</contactScriptUrl>
     <!-- dark, light or fire -->
-    <defaultTheme>fire</defaultTheme>
+    <defaultTheme>dark</defaultTheme>
   </config>
 
   <!-- Short labels and messages used by scripts -->
@@ -39,6 +39,8 @@
 
   <!-- Page copy. Each value may contain simple HTML such as <span class="grad">. {company} is replaced by the company name above. -->
   <texts>
+    <!-- page title -->
+    <text key="meta.title"><![CDATA[TessereX — Instant Global Payments]]></text>
     <!-- nav -->
     <text key="nav.a.1"><![CDATA[Why TessereX]]></text>
     <text key="nav.a.2"><![CDATA[How it works]]></text>
@@ -96,7 +98,7 @@
     <text key="mobile.h2.1"><![CDATA[Instant payments, <span class="grad">right from your phone</span>]]></text>
     <text key="mobile.sub.1"><![CDATA[Scan, confirm, done. The same global rails, wrapped in a flow anyone can use in a few taps. Tap a step to preview it.]]></text>
     <text key="mobile.h3.1"><![CDATA[Scan or choose]]></text>
-    <text key="mobile.p.1"><![CDATA[Scan a QR code or pick a contact. Local QR and UPI-style flows are supported.]]></text>
+    <text key="mobile.p.1"><![CDATA[Scan a QR code or pick a contact. Local QR payment flows are supported.]]></text>
     <text key="mobile.h3.2"><![CDATA[Review upfront]]></text>
     <text key="mobile.p.2"><![CDATA[See what you pay and what the recipient gets before you confirm.]]></text>
     <text key="mobile.h3.3"><![CDATA[Authorise securely]]></text>
@@ -139,12 +141,12 @@
     <text key="tech.p.1"><![CDATA[Designed from day one for tokenised money, bridging private and sovereign digital currencies.]]></text>
     <text key="tech.h3.2"><![CDATA[Global liquidity network]]></text>
     <text key="tech.p.2"><![CDATA[Banks, dealers and fintechs plug into shared liquidity so payments always find a path.]]></text>
-    <text key="tech.h3.3"><![CDATA[Partner badges &amp; incentives]]></text>
-    <text key="tech.p.3"><![CDATA[Non-fungible operational badges and a multi-currency token reward system keep liquidity partners aligned.]]></text>
+    <text key="tech.h3.3"><![CDATA[Liquidity incentives]]></text>
+    <text key="tech.p.3"><![CDATA[A multi-currency token reward system keeps liquidity partners aligned and engaged.]]></text>
     <text key="tech.h3.4"><![CDATA[Compliance by design]]></text>
     <text key="tech.p.4"><![CDATA[Regulatory and policy rules are enforced in the rails, not added afterwards.]]></text>
     <text key="tech.h3.5"><![CDATA[Wallet &amp; local payment flows]]></text>
-    <text key="tech.p.5"><![CDATA[Multi-asset wallets on web and mobile, with QR and UPI-style flows for everyday payments.]]></text>
+    <text key="tech.p.5"><![CDATA[Multi-asset wallets on web and mobile, with QR payment flows for everyday use.]]></text>
     <text key="tech.h3.6"><![CDATA[AI agent interface]]></text>
     <text key="tech.p.6"><![CDATA[Command your wallet and trades in plain language through an agent that works on live account state.]]></text>
     <!-- who -->
@@ -153,7 +155,7 @@
     <text key="who.h3.1"><![CDATA[Banks &amp; fintechs]]></text>
     <text key="who.p.1"><![CDATA[Offer customers instant international transfers without building rails yourself.]]></text>
     <text key="who.h3.2"><![CDATA[Liquidity partners]]></text>
-    <text key="who.p.2"><![CDATA[Earn from the flows you enable, with recognised standing on the network.]]></text>
+    <text key="who.p.2"><![CDATA[Earn from the flows you enable as part of a shared liquidity network.]]></text>
     <text key="who.h3.3"><![CDATA[Businesses]]></text>
     <text key="who.p.3"><![CDATA[Pay suppliers and teams abroad in seconds, with predictable costs.]]></text>
     <text key="who.h3.4"><![CDATA[Individuals]]></text>
